@@ -1,7 +1,7 @@
 package :statsd do
   STATSD_HEAD   = "https://github.com/etsy/statsd.git"
-  STATSD_INIT   = "https://github.com/jondot/statsd-stack/raw/master/config/stack/configs/statsd/statsd.conf"
-  STATSD_CONF   = "https://github.com/jondot/statsd-stack/raw/master/config/stack/configs/statsd/local.js"
+  STATSD_INIT   = "https://raw.github.com/jondot/statsd-stack/master/config/stack/configs/statsd/statsd.conf"
+  STATSD_CONF   = "https://raw.github.com/jondot/statsd-stack/master/config/stack/configs/statsd/local.js"
   
   description 'statsd'
   version 'HEAD'

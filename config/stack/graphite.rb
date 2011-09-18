@@ -8,7 +8,7 @@
 #
 package :graphite_web do
 
-  GRAPHITE_ADMIN_DEFAULT = "https://github.com/jondot/statsd-stack/raw/master/config/stack/configs/graphite/initial_data.json"
+  GRAPHITE_ADMIN_DEFAULT = "https://raw.github.com/jondot/statsd-stack/master/config/stack/configs/graphite/initial_data.json"
   GRAPHITE_DASH_CONF     = "https://raw.github.com/jondot/statsd-stack/master/config/stack/configs/graphite/dashboard.conf"
   description 'Graphite Web Frontend'
   version '0.9.8'
