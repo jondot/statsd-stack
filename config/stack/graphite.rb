@@ -8,8 +8,8 @@
 #
 package :graphite_web do
 
-  GRAPHITE_ADMIN_DEFAULT = "https://raw.github.com/gist/1213848/30cc0afb6f23fbeb3d187406d986ad1d4f9d2d4f/initial_data.json"
-  GRAPHITE_DASH_CONF     = "https://raw.github.com/gist/1214158/c8762f8659f9c9b12f96f21a91427c74dbc3d0e0/dashboard.conf"
+  GRAPHITE_ADMIN_DEFAULT = "https://github.com/jondot/statsd-stack/raw/master/config/stack/configs/graphite/initial_data.json"
+  GRAPHITE_DASH_CONF     = "https://raw.github.com/jondot/statsd-stack/master/config/stack/configs/graphite/dashboard.conf"
   description 'Graphite Web Frontend'
   version '0.9.8'
   
@@ -67,7 +67,7 @@ end
 # Carbon
 #
 package :graphite_carbon do
-  CARBON_INITD = "https://raw.github.com/gist/1213708/4bc96764438fe3afe35150e52c10189125866197/carbon"
+  CARBON_INITD = "https://raw.github.com/jondot/statsd-stack/master/config/stack/configs/graphite/carbon"
   description 'Graphite Carbon'
   version '0.9.8'
 
