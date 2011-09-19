@@ -4,7 +4,7 @@
 Scripts for [Sprinkle](http://github.com/crafterm/sprinkle/ "Sprinkle"), the provisioning tool.
 These scripts will set you up with a full fledged statsd machine (including daemons and dashboard).  
 
-**Tested on Ubuntu 10.04 LTS**  
+**Tested on Ubuntu 10.04, 11.04**  
 
 
 ## How to get your sprinkle on:
