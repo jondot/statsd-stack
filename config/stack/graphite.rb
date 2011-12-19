@@ -10,13 +10,14 @@ package :graphite_web do
 
   GRAPHITE_ADMIN_DEFAULT = "https://raw.github.com/jondot/statsd-stack/master/config/stack/configs/graphite/initial_data.json"
   GRAPHITE_DASH_CONF     = "https://raw.github.com/jondot/statsd-stack/master/config/stack/configs/graphite/dashboard.conf"
+  GRAPHITE_VHOST         = "https://raw.github.com/jondot/statsd-stack/master/config/stack/configs/graphite/graphite-web-vhost.conf"
   description 'Graphite Web Frontend'
   version '0.9.9'
 
   source "http://launchpad.net/graphite/0.9/0.9.9/+download/graphite-web-0.9.9.tar.gz" do
     builds '/tmp/graphite_web'
     custom_install 'sudo python check-dependencies.py && sudo python setup.py install'
-    post :install, 'cp examples/example-graphite-vhost.conf /etc/apache2/sites-available/default'
+    post :install, "wget -cq -O /etc/apache2/sites-available/default #{GRAPHITE_VHOST}"
     post :install, '/etc/init.d/apache2 reload'
     post :install, 'cp /opt/graphite/conf/graphite.wsgi.example /opt/graphite/conf/graphite.wsgi'
     post :install, "wget -cq -O /opt/graphite/conf/dashboard.conf #{GRAPHITE_DASH_CONF}"
