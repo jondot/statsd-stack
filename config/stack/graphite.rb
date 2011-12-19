@@ -18,6 +18,7 @@ package :graphite_web do
     builds '/tmp/graphite_web'
     custom_install 'sudo python check-dependencies.py && sudo python setup.py install'
     post :install, 'mkdir -p /etc/httpd/wsgi/'
+    post :install, "rm /etc/apache2/sites-available/default"
     post :install, "wget -cq -O /etc/apache2/sites-available/default #{GRAPHITE_VHOST}"
     post :install, '/etc/init.d/apache2 reload'
     post :install, 'cp /opt/graphite/conf/graphite.wsgi.example /opt/graphite/conf/graphite.wsgi'
