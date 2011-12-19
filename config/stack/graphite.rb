@@ -17,6 +17,7 @@ package :graphite_web do
   source "http://launchpad.net/graphite/0.9/0.9.9/+download/graphite-web-0.9.9.tar.gz" do
     builds '/tmp/graphite_web'
     custom_install 'sudo python check-dependencies.py && sudo python setup.py install'
+    post :install, 'mkdir -p /etc/httpd/wsgi/'
     post :install, "wget -cq -O /etc/apache2/sites-available/default #{GRAPHITE_VHOST}"
     post :install, '/etc/init.d/apache2 reload'
     post :install, 'cp /opt/graphite/conf/graphite.wsgi.example /opt/graphite/conf/graphite.wsgi'

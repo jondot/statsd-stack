@@ -7,6 +7,10 @@ These scripts will set you up with a full fledged statsd machine (including daem
 **Tested on Ubuntu 10.04, 11.04**  
 
 
+## Before You Begin
+This script uses latest node. As per now (dec-2011), it uses 0.6.2 which
+doesn't work with etsy/statsd unless you apply [this fix yourself](https://github.com/etsy/statsd/pull/47/files)
+
 ## How to get your sprinkle on:
 
 * Get a brand spanking new slice / host (Debian or Ubuntu please, other apt-based sytems might work too)
