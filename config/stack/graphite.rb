@@ -11,9 +11,9 @@ package :graphite_web do
   GRAPHITE_ADMIN_DEFAULT = "https://raw.github.com/jondot/statsd-stack/master/config/stack/configs/graphite/initial_data.json"
   GRAPHITE_DASH_CONF     = "https://raw.github.com/jondot/statsd-stack/master/config/stack/configs/graphite/dashboard.conf"
   description 'Graphite Web Frontend'
-  version '0.9.8'
-  
-  source "http://launchpad.net/graphite/1.0/#{version}/+download/graphite-web-#{version}.tar.gz" do
+  version '0.9.9'
+
+  source "http://launchpad.net/graphite/0.9/0.9.9/+download/graphite-web-0.9.9.tar.gz" do
     builds '/tmp/graphite_web'
     custom_install 'sudo python check-dependencies.py && sudo python setup.py install'
     post :install, 'cp examples/example-graphite-vhost.conf /etc/apache2/sites-available/default'
@@ -48,9 +48,9 @@ end
 #
 package :graphite_whisper do
   description 'Graphite Whisper'
-  version '0.9.8'
+  version '0.9.9'
   
-  source "http://launchpad.net/graphite/1.0/#{version}/+download/whisper-#{version}.tar.gz" do
+  source "http://launchpad.net/graphite/0.9/0.9.9/+download/whisper-0.9.9.tar.gz" do
     builds '/tmp/graphite_whisper'
     custom_install 'sudo python setup.py install'
   end
@@ -69,9 +69,9 @@ end
 package :graphite_carbon do
   CARBON_INITD = "https://raw.github.com/jondot/statsd-stack/master/config/stack/configs/graphite/carbon"
   description 'Graphite Carbon'
-  version '0.9.8'
+  version '0.9.9'
 
-  source "http://launchpad.net/graphite/1.0/#{version}/+download/carbon-#{version}.tar.gz" do
+  source "http://launchpad.net/graphite/0.9/0.9.9/+download/carbon-0.9.9.tar.gz" do
     builds '/tmp/graphite_carbon'
     custom_install 'sudo python setup.py install'
     post :install, 'cd /opt/graphite/conf' + \
@@ -94,5 +94,5 @@ end
 # Essentials
 #
 package :graphite_essentials do
-  apt %w(apache2 apache2-mpm-worker apache2-utils apache2.2-bin apache2.2-common libapr1 libaprutil1 libaprutil1-dbd-sqlite3 libapache2-mod-wsgi libaprutil1-ldap memcached python-software-properties python-twisted python-cairo-dev python-django python-ldap python-memcache python-pysqlite2 sqlite3 erlang-os-mon erlang-snmp rabbitmq-server bzr expect ssh libapache2-mod-python)
+  apt %w(apache2 apache2-mpm-worker apache2-utils apache2.2-bin apache2.2-common libapr1 libaprutil1 libaprutil1-dbd-sqlite3 libapache2-mod-wsgi libaprutil1-ldap memcached python-software-properties python-twisted python-cairo-dev python-django python-django-tagging python-ldap python-memcache python-pysqlite2 sqlite3 erlang-os-mon erlang-snmp rabbitmq-server bzr expect ssh libapache2-mod-python)
 end
